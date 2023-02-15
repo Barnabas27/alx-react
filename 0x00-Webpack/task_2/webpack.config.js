@@ -1,12 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: {
-    bundle: path.resolve(__dirname, './js/dashboard_main.js'),
+    main: path.resolve(__dirname, './js/dashboard_main.js'),
   },
   output: {
-    filename: '[name].js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },
   module: {
@@ -19,12 +20,18 @@ module.exports = {
         {
             test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
             type: 'asset/resource',
+            use: [
+              'file-loader',
+              {
+                loader: 'image-webpack-loader',
+                options: {
+                  bypassOnDebug: true,
+                  disable: true,
+                },
+              },
+            ],
         }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'basic app'
-    })
-  ]
+
 };
