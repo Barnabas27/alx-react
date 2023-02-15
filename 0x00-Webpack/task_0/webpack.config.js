@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 module.exports = {
   entry: {
@@ -8,9 +8,9 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'basic app'
-    })
-  ]
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     title: 'basic app'
+  //   })
+  // ]
 };
