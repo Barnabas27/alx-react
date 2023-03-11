@@ -30,7 +30,7 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpeg|svg|jpg)$/i,
         use: [
           "file-loader",
           {
@@ -40,6 +40,7 @@ module.exports = {
               disable: true, // webpack@2.x and newer
             },
           },
+          { test: /\.txt$/, use: "raw-loader" },
         ],
       },
     ],
