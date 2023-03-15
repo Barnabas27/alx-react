@@ -11,6 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "devDependencies": {
     
     "webpack": "^5.75.0",
